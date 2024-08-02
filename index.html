@@ -5,77 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S.I.G.M.A.: The Society of Internet Geniuses and Market Autists</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-            background: url('sigmaback2.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+            color: #f0f0f0;
+            overflow-x: hidden;
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00ff7f;
+            transition: color 0.3s;
+            text-shadow: 0 0 10px rgba(0, 255, 127, 0.8);
         }
         .header a {
-            color: #00FF00;
+            color: #00ff7f;
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
         }
         .header a:hover {
             color: #fff;
+            transform: scale(1.1);
         }
         .hero {
             text-align: center;
-            padding: 200px 20px 100px 20px;
-            background: rgba(0, 0, 0, 0.7);
+            padding: 150px 20px;
+            background: url('sigmaback.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: #f0f0f0;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
         }
         .hero h1 {
-            font-size: 3em;
+            font-size: 4.5em;
             margin: 0;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            animation: glow 2s infinite alternate;
         }
         .hero p {
-            font-size: 1.5em;
-            margin: 10px 0 20px;
+            font-size: 1.8em;
+            margin: 20px 0 30px;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
         }
         .hero button {
-            padding: 10px 20px;
-            font-size: 1em;
-            background: #00FF00;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            background: linear-gradient(90deg, #00ff7f, #00cc66);
             border: none;
+            border-radius: 30px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 255, 127, 0.7);
+            color: #000;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+        .hero button:hover::after {
+            opacity: 1;
         }
         .hero button:hover {
-            background: #00AA00;
+            background: linear-gradient(90deg, #00cc66, #00994d);
+            transform: scale(1.05);
         }
         .section {
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.8);
+            padding: 70px 20px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #f0f0f0;
+            border-top: 1px solid #444;
+            box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.6);
         }
         .section h2 {
-            font-size: 2em;
+            font-size: 2.7em;
             text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
         }
         .section p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.5;
+            font-size: 1.4em;
+            max-width: 900px;
+            margin: 30px auto;
+            line-height: 1.7;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
         }
         .footer {
             text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.95);
+            color: #f0f0f0;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
         }
         .footer a {
-            color: #00FF00;
+            color: #00ff7f;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 12px;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #00ff7f, 0 0 30px #00ff7f, 0 0 40px #00ff7f, 0 0 50px #00ff7f, 0 0 60px #00ff7f;
+            }
+            to {
+                text-shadow: 0 0 30px #00cc66, 0 0 40px #00cc66, 0 0 50px #00cc66, 0 0 60px #00cc66, 0 0 70px #00cc66;
+            }
         }
     </style>
 </head>
@@ -84,15 +150,14 @@
     <header class="header">
         <div class="logo">S.I.G.M.A.</div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="https://x.com/sigma_ether">Twitter</a>
+            <a href="#uniswap">Uniswap</a>
+            <a href="https://x.com/sigma_ether" target="_blank">Twitter</a>
             <a href="#membership">Chart</a>
-            <a href="#activities">Buy $SIGMA</a>
             <a href="#contact">Merch</a>
         </nav>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero" id="uniswap">
         <h1>Society of Internet Geniuses and Market Autists</h1>
         <p>Unleash your inner genius and master the Flow.</p>
         <button>Buy $SIGMA</button>
@@ -105,7 +170,7 @@
 
     <section class="section" id="membership">
         <h2>Token</h2>
-        <p>0/0 Tax // 1t // Burned & Renounced </p>
+        <p>0/0 Tax // Supply 1t // Burned & Renounced</p>
         <button>Telegram</button>
     </section>
 
@@ -117,11 +182,10 @@
     <footer class="footer" id="contact">
         <p>Contact us: <a href="mailto:contact@sigma.com">contact@sigma.com</a></p>
         <p>
-            <a href="#home">Home</a> |
+            <a href="#uniswap">Uniswap</a> |
             <a href="#about">About</a> |
             <a href="#membership">Membership</a> |
-            <a href="#activities">Activities</a> |
-            <a href="#contact">Contact</a>
+            <a href="#contact">Merch</a>
         </p>
     </footer>
 
