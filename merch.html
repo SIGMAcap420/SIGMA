@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.I.G.M.A. Merch</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00ff7f;
+            transition: color 0.3s;
+            text-shadow: 0 0 10px rgba(0, 255, 127, 0.8);
+        }
+        .header a {
+            color: #00ff7f;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .header a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.9);
+            min-height: calc(100vh - 150px); /* Adjust to fit the viewport with header/footer */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container img {
+            max-width: 25%; /* Further reduced for better fit */
+            height: auto;
+            box-shadow: 0 4px 15px rgba(0, 255, 127, 0.7);
+            border-radius: 15px;
+            margin-bottom: 20px; /* Add some space between image and text */
+        }
+        .container h2 {
+            font-size: 2em;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.95);
+            color: #f0f0f0;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .footer a {
+            color: #00ff7f;
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">S.I.G.M.A.</div>
+        <nav>
+            <a href="index.html#uniswap">Uniswap</a>
+            <a href="https://x.com/sigma_ether" target="_blank">Twitter</a>
+            <a href="index.html#membership">Chart</a>
+            <a href="merch.html">Merch</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="sigmamerch.png" alt="SIGMA Merch">
+        <h2>If you are a member of The Council, contact an admin for your welcome package. </h2>
+    </div>
+
+    <footer class="footer">
+        <p>Contact us: <a href="mailto:contact@sigma.com">contact@sigma.com</a></p>
+        <p>
+            <a href="index.html#uniswap">Uniswap</a> |
+            <a href="index.html#about">About</a> |
+            <a href="index.html#membership">Membership</a> |
+            <a href="merch.html">Merch</a>
+        </p>
+    </footer>
+
+</body>
+</html>
